@@ -1,12 +1,6 @@
-#pragma once
-class Table
-{
-	Piece* dimensions[8][8];
-public:
-	void init() {
-		for (int i = 0; i < 8; i++)
-			for (int j = 0; j < 8; j++)
-				dimensions[i][j] = nullptr;
+public class Table {
+	private Piece[][] dimensions = new Piece[8][8];
+	public void init() {
 
 		dimensions[6][0] = new Pawn('p', 6, 0, 0);
 		dimensions[6][1] = new Pawn('p', 6, 1, 0);
@@ -46,4 +40,4 @@ public:
 
 
 	}
-};
+}
