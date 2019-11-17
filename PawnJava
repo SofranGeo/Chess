@@ -9,7 +9,6 @@ public class Pawn extends Piece{
 	private char name;
 	private Position pos;
 	private boolean color;
-	@Override
 	public boolean isValidMove(Position move, Piece *table) {
 	
 		if (move.getX() >= 0 && move.getX() < 8 && move.getY() >= 0 && move.getY() < 8)
@@ -115,4 +114,9 @@ public class Pawn extends Piece{
 			return 0;
 	}
 	
-}
+
+	@Override
+	public boolean isValidMove() {
+		// TODO Auto-generated method stub
+		return false;
+	}}
