@@ -1,0 +1,118 @@
+
+public class Pawn extends Piece{
+	public Pawn(char name, Position pos, boolean color) {
+		super();
+		this.name = name;
+		this.pos = pos;
+		this.color = color;
+	}
+	private char name;
+	private Position pos;
+	private boolean color;
+	@Override
+	public boolean isValidMove(Position move, Piece *table) {
+	
+		if (move.getX() >= 0 && move.getX() < 8 && move.getY() >= 0 && move.getY() < 8)
+		{
+			switch (this.color)
+			{
+			case 0: {
+				if (this.poz.getX() == 6)
+				{
+					if (move.getX() - this.poz.getX() == -1) {
+						if (move.getY() == this.poz.getY() && table + move.getX() * 7 + move.getY() == nullptr)
+							return 1;
+						else
+							return 0;
+						if (abs(move.getY() - this.poz.getY()) == 1 && table + move.getY() * 7 + move.getY() != nullptr)
+							return 1;
+						else
+							return 0;
+						
+					}
+					if (move.getX() - this.poz.getX() == -2) {
+						if (move.getY() == this.poz.getY() && table + (move.getX() - 1) * 7 + move.getY() == nullptr)
+						{
+							if (move.getY() == this.poz.getY() && table + move.getX() * 7 + move.getY() == nullptr)
+								return 1;
+							else
+								return 0;
+						}
+						else 
+							return 0;
+					}
+					
+					return 0;
+				}
+				else
+				{
+					if (move.getX() - this.poz.getX() == -1) {
+						if (move.getY() == this.poz.getY() && table + move.getX()*7 + move.getY() == nullptr)
+							return 1;
+						else
+							return 0;
+						if (abs(move.getY() - this.poz.getY()) == 1 && table + move.getX() * 7 + move.getY() != nullptr)
+							return 1;
+						else 
+							return 0;
+						
+					}
+					return 0;
+				}
+				break;
+			}
+			case 1: {
+				if (this.poz.getX()== 1)
+				{
+					if (move.getX() - this.poz.getX() == 1) {
+						if (move.getY() == this.poz.getY() && table + move.getX() * 7 + move.getY() == nullptr)
+							return 1;
+						else
+							return 0;
+						if (abs(move.getY() - this.poz.getY()) == 1 && table + move.getX() * 7 + move.getY() != nullptr)
+							return 1;
+						else
+							return 0;
+
+					}
+					if (move.getX() - this.poz.getX() == 2) {
+						if (move.getY() == this.poz.getY() && table + (move.getX() - 1) * 7 + move.getY() == nullptr)
+						{
+							if (move.getY() == this.poz.getY() && table + move.getX() * 7 + move.getY() == nullptr)
+								return 1;
+							else
+								return 0;
+						}
+						else
+							return 0;
+					}
+
+					return 0;
+				}
+				else
+				{
+					if (move.getX() - this.poz.getX() == 1) {
+						if (move.getY() == this.poz.getY() && table + move.getX() * 7 + move.getY() == nullptr)
+							return 1;
+						else
+							return 0;
+						if (abs(move.getY() - this.poz.getY()) == 1 && table + move.getX() * 7 + move.getY() != nullptr)
+							return 1;
+						else
+							return 0;
+
+					}
+					return 0;
+				}
+				// To Do : El Pasant
+				break;
+			}
+			default:
+				break;
+			}
+		}
+		else
+			return 0;
+	}
+	
+}
